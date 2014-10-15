@@ -1,0 +1,850 @@
+<!---------I will document all my html5 techniques using the green highlight---->
+
+
+
+
+
+<!DOCTYPE html>  <!---------i no longer need the long html type version--------->
+
+
+
+<html lang="en">
+<head>
+    <title>Internshipahoy</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/layout.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="css/ie.css" type="text/css" media="screen">
+
+	
+	
+	
+		
+		<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.3.1.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//To switch directions up/down and left/right just place a "-" in front of the top/left attribute
+				//Vertical Sliding
+				$('.boxgrid.slidedown').hover(function(){
+					$(".cover", this).stop().animate({top:'-260px'},{queue:false,duration:300});
+				}, function() {
+					$(".cover", this).stop().animate({top:'0px'},{queue:false,duration:300});
+				});
+				//Horizontal Sliding
+				$('.boxgrid.slideright').hover(function(){
+					$(".cover", this).stop().animate({left:'325px'},{queue:false,duration:300});
+				}, function() {
+					$(".cover", this).stop().animate({left:'0px'},{queue:false,duration:300});
+				});
+				//Diagnal Sliding
+				$('.boxgrid.thecombo').hover(function(){
+					$(".cover", this).stop().animate({top:'260px', left:'325px'},{queue:false,duration:300});
+				}, function() {
+					$(".cover", this).stop().animate({top:'0px', left:'0px'},{queue:false,duration:300});
+				});
+				//Partial Sliding (Only show some of background)
+				$('.boxgrid.peek').hover(function(){
+					$(".cover", this).stop().animate({top:'90px'},{queue:false,duration:160});
+				}, function() {
+					$(".cover", this).stop().animate({top:'0px'},{queue:false,duration:160});
+				});
+				//Full Caption Sliding (Hidden to Visible)
+				$('.boxgrid.captionfull').hover(function(){
+					$(".cover", this).stop().animate({top:'160px'},{queue:false,duration:160});
+				}, function() {
+					$(".cover", this).stop().animate({top:'260px'},{queue:false,duration:160});
+				});
+				//Caption Sliding (Partially Hidden to Visible)
+				$('.boxgrid.caption').hover(function(){
+					$(".cover", this).stop().animate({top:'160px'},{queue:false,duration:160});
+				}, function() {
+					$(".cover", this).stop().animate({top:'220px'},{queue:false,duration:160});
+				});
+			});
+		</script>
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    <link href='http://fonts.googleapis.com/css?family=Adamina' rel='stylesheet' type='text/css'>  <!---------I am using google web fonts from the website https://developers.google.com/webfonts/docs/getting_started---------> 
+    <script src="js/jquery-1.6.3.min.js" type="text/javascript"></script>
+    <script src="js/cufon-yui.js" type="text/javascript"></script>
+    <script src="js/cufon-replace.js" type="text/javascript"></script>
+    <script src="js/Lobster_13_400.font.js" type="text/javascript"></script>
+    <script src="js/NewsGoth_BT_400.font.js" type="text/javascript"></script>
+    <script src="js/FF-cash.js" type="text/javascript"></script>
+    <script src="js/easyTooltip.js" type="text/javascript"></script>
+	<script src="js/script.js" type="text/javascript"></script>
+    <script src="js/bgSlider.js" type="text/javascript"></script>
+    <script src="js/jquery.easing.1.3.js" type="text/javascript"></script>
+    <script src="js/tms-0.3.js" type="text/javascript"></script>
+    <script src="js/tms_presets.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true&libraries=places"></script>
+<script type='text/javascript' src="lib/jquery.scrollTo-1.4.2.js"></script>
+<script type='text/javascript' src="lib/jquery.bgiframe.js"></script>
+<script type='text/javascript' src="lib/jquery.support.windowsTheme-0.3.js"></script>
+<script type='text/javascript' src="lib/jquery.dropdownReplacement.js"></script>
+<link rel="stylesheet" href="lib/jquery.dropdownReplacement.css" media="screen"/>
+ 
+
+ <script type="text/javascript">
+$(document).ready(function() {
+$("#carsSelect").dropdownReplacement();
+});
+</script>
+ 
+ 
+ 
+ 
+ 
+	
+	
+	<style type="text/css">
+		
+			*{ padding:0px; margin:0px; }
+			body{ background:#D5DEE7; }
+			a{ color:#C8DCE5; }
+			h3{ margin: 10px 10px 0 10px; color:#FFF; font:18pt Arial, sans-serif; letter-spacing:-1px; font-weight: bold;  }
+			
+			.boxgrid{ 
+				width: 180px; 
+				height: 140px; 
+				margin:10px; 
+				float:left; 
+				background:#161613; 
+				border: solid 2px #8399AF; 
+				overflow: hidden; 
+				position: relative; 
+			}
+				.boxgrid img{ 
+					position: absolute; 
+					top: 0; 
+					left: 0; 
+					border: 0; 
+				}
+				.boxgrid p{ 
+					padding: 0 10px; 
+					color:#afafaf; 
+					font-weight:bold; 
+					font:10pt "Lucida Grande", Arial, sans-serif; 
+				}
+				
+			.boxcaption{ 
+				float: left; 
+				position: absolute; 
+				background: #000; 
+				height: 100px; 
+				width: 100%; 
+				opacity: .8; 
+				/* For IE 5-7 */
+				filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+				/* For IE 8 */
+				-MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+ 			}
+ 				.captionfull .boxcaption {
+ 					top: 260;
+ 					left: 0;
+ 				}
+ 				.caption .boxcaption {
+ 					top: 220;
+ 					left: 0;
+ 				}
+				
+		</style>
+	
+	
+	<style>
+      body {
+        font-family: sans-serif;
+        font-size: 14px;
+      }
+      #map_canvas {
+        height: 400px;
+        width: 600px;
+        margin-top: 0.6em;
+      }
+    </style>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!---------css for google map--------->
+	 <style type="text/css">
+      #map {
+        height: 400px;
+        width: 910px;
+        border: 1px solid #333;
+        margin-top: 0.6em;
+      }
+    </style>
+
+		<!---------Geo location JavaScript for map--------->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+  <script>
+      function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(-33.8688, 151.2195),
+          zoom: 13,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById('map_canvas'),
+          mapOptions);
+
+        var input = document.getElementById('searchTextField');
+        var autocomplete = new google.maps.places.Autocomplete(input);
+
+        autocomplete.bindTo('bounds', map);
+
+        var infowindow = new google.maps.InfoWindow();
+        
+		
+		
+		
+		var usa = new google.maps.LatLng(37.09024, -95.712891);
+    var brasil = new google.maps.LatLng(-14.235004, -51.92528);
+    var argentina = new google.maps.LatLng(-38.416097, -63.616672);
+
+    var marker = new google.maps.Marker({
+        position: usa,
+        url: '/destinos/exibir/pais_id/3',
+        title: 'Estados Unidos',
+        map: map
+    });
+
+    var marker = new google.maps.Marker({
+        position: brasil,
+        url: '/destinos/exibir/pais_id/2',
+        title: 'UlsterBank,Senior I.T Member',
+        map: map
+    });
+
+    var marker = new google.maps.Marker({
+        position: argentina,
+        url: '/destinos/exibir/pais_id/1',
+        title: 'Argentina',
+        map: map
+    });
+for ( i = 0; i < markers.length; i++ ) {
+    google.maps.event.addListener(markers[i], 'click', function() {
+      window.location.href = this[i].url;  //changed from markers[i] to this[i]
+    });
+}
+
+
+        google.maps.event.addListener(autocomplete, 'place_changed', function() {
+          infowindow.close();
+          var place = autocomplete.getPlace();
+          if (place.geometry.viewport) {
+            map.fitBounds(place.geometry.viewport);
+          } else {
+            map.setCenter(place.geometry.location);
+            map.setZoom(17);  // Why 17? Because it looks good.
+          }
+		  
+		  
+		  
+		  
+
+          var image = new google.maps.MarkerImage(
+              place.icon,
+              new google.maps.Size(71, 71),
+              new google.maps.Point(0, 0),
+              new google.maps.Point(17, 34),
+              new google.maps.Size(35, 35));
+          marker.setIcon(image);
+          marker.setPosition(place.geometry.location);
+
+          var address = '';
+          if (place.address_components) {
+            address = [
+              (place.address_components[0] && place.address_components[0].short_name || ''),
+              (place.address_components[1] && place.address_components[1].short_name || ''),
+              (place.address_components[2] && place.address_components[2].short_name || '')
+            ].join(' ');
+          }
+
+          infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+          infowindow.open(map, marker);
+        });
+		
+		
+		
+		
+		
+
+        // Sets a listener on a radio button to change the filter type on Places
+        // Autocomplete.
+        function setupClickListener(id, types) {
+          var radioButton = document.getElementById(id);
+          google.maps.event.addDomListener(radioButton, 'click', function() {
+            autocomplete.setTypes(types);
+          });
+        }
+
+        setupClickListener('changetype-all', []);
+        setupClickListener('changetype-establishment', ['establishment']);
+        setupClickListener('changetype-geocode', ['geocode']);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+    </script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+<!--Linked In account script for head of website..--->	
+
+<script type="text/javascript" src="http://platform.linkedin.com/in.js">
+  api_key: 2q7t5kzpdvz7
+    authorize: true
+</script>
+
+
+<script type="text/javascript">
+  // 2. Runs when the JavaScript framework is loaded
+
+  function onLinkedInLoad() {
+
+    IN.Event.on(IN, "auth", onLinkedInAuth);
+  }
+
+  // 2. Runs when the viewer has authenticated
+
+  function onLinkedInAuth() {
+
+    IN.API.Profile("me").result(displayProfiles);
+  }
+
+  // 2. Runs when the Profile() API call returns successfully
+  function displayProfiles(profiles) {
+    member = profiles.values[0];
+    document.getElementById("profiles").innerHTML = 
+      "<p  id=\"" + member.id + "\">Welcome " +  member.firstName + " " + member.lastName + "</p><p  id=\"" + member.id + "\">Thank you for Logging In and Enjoy " + "</p>";
+
+  }
+</script>
+	
+	
+	
+	<!---------css for YouTube Videos--------->
+
+	
+<style>
+.titlec {
+  font-size: small;
+}
+ul.videos li {
+  float: left;
+  width: 10em;
+  margin-bottom: 1em;
+  margin-right : 7px;
+
+}
+ul.videos
+{
+  margin-bottom: 1em;
+  padding-left : 0em;
+  list-style: none;
+}
+</style>
+
+
+	<!---------JavaScript for YouTube--------->
+
+
+<script type="text/javascript" src="http://swfobject.googlecode.com/svn/trunk/swfobject/swfobject.js"></script>
+<script type="text/javascript">
+function loadVideo(playerUrl, autoplay) {
+  swfobject.embedSWF(
+      playerUrl + '&rel=1&border=0&fs=1&autoplay=' + 
+      (autoplay?1:1), 'player', '615', '330', '9.0.0', false, 
+      false, {allowfullscreen: 'true'});
+}
+
+function showMyVideos2(data) {
+  var feed = data.feed;
+  var entries = feed.entry || [];
+  var html = ['<ul class="videos">'];
+  for (var i = 0; i < entries.length; i++) {
+    var entry = entries[i];
+    var title = entry.title.$t.substr(0, 3);
+    var thumbnailUrl = entries[i].media$group.media$thumbnail[0].url;
+    var playerUrl = entries[i].media$group.media$content[0].url;
+    html.push('<li onclick="loadVideo(\'', playerUrl, '\', true)">',
+              '<span class="titlec">', title, '...</span><br /><img src="', 
+              thumbnailUrl, '" width="100" height="100" />', '</span></li>');
+  }
+  html.push('</ul><br style="clear: left;"/>');
+  document.getElementById('videos2').innerHTML = html.join('');
+  if (entries.length > 0) {
+    loadVideo(entries[0].media$group.media$content[0].url, false);
+  }
+}
+</script>		
+	
+	
+	
+	
+<!---dropdown---->
+	
+	<SCRIPT LANGUAGE="JavaScript">
+<!--
+function JumpToIt(list) {
+    var newPage = list.options[list.selectedIndex].value
+    if (newPage != "None") {
+        location.href=newPage
+    }
+}
+//-->
+</SCRIPT>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!--[if lt IE 7]>
+    <div style=' clear: both; text-align:center; position: relative;'>
+        <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+        	<img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+        </a>
+    </div>
+	<![endif]-->
+    <!--[if lt IE 9]>
+   		<script type="text/javascript" src="js/html5.js"></script>
+        <link rel="stylesheet" href="css/ie.css" type="text/css" media="screen">
+	<![endif]-->
+</head>
+<body id="page1">
+	<div id="bgSlider"></div>
+    <div class="bg_spinner"></div>
+	<div class="extra">
+        <!--==============================header=================================-->
+        <header>
+        	<div class="top-row">
+            	<div class="main">
+                	<div class="wrapper">
+                        <h1>
+						
+						 <strong class="title">
+                                        <strong>Internshipahoy.com</strong><img src="images/lego2.png" alt="" />
+										<em></em>
+                                    </strong>
+						</h1>
+					
+						
+						
+                        <ul class="pagination">
+                            <li class="current"><a href="images/sea-view.jpg"></a></li>
+                        </ul>
+						
+							<!---------Cool Mood changer--------->
+
+						
+                        <strong class="bg-text">
+						
+						
+						
+						
+						
+						
+						</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-row">
+            	<div class="menu-border">
+                	<div class="main">
+                        <nav>
+						
+						
+							<!---------Menu Bar--------->
+
+						
+                              <ul class="menu">
+							    <li><a class="" href="index.html">Home</a></li>
+								<li><a class="" href="index.html">FAQ</a></li>
+                                <li><a class="" href="Linkedin.html">LinkedIn Intern's</a></li>
+								<li><a class="" href="GoogleGeo.html">Google Geo Jobs</a></li>
+								<li><a class="" href="Youtube.html">YouTube 4 Inter's</a></li>
+								<li><a class="" >
+								
+								
+								
+								<FORM>Internships By Catagory |  
+								
+			 
+<SELECT WIDTH=6 height=6 onChange="JumpToIt(this)">
+
+<OPTION VALUE="http://internshipahoy.com/">Accounting
+<OPTION VALUE="http://internshipahoy.com/">HR
+<OPTION VALUE="http://internshipahoy.com/">Phycology
+<OPTION VALUE="http://internshipahoy.com/">Business
+
+
+
+</SELECT>
+</FORM>
+
+		
+								</a></li>
+
+							
+								
+                        </ul>
+						
+						
+						
+						
+						
+                        </nav>
+                    </div>
+                </div>
+            </div>
+			<div class="ic"></div>
+        </header>
+        <!--==============================content================================-->
+        <div class="inner">
+            <div class="main">
+                <section id="content">
+                    <div class="slider">
+			 <article class="">
+																
+								
+<!------------------This is the player for the YouTube Videos------------------->								
+								
+  <div id="playerContainer" style="width: 900px; height: 100px; float: left;">
+    <object id="player"></object>
+</div>									
+									
+									
+									</p>
+                                    <div class="relative">
+                                       
+                                    </div>
+                                </article>
+					
+                        <ul class="items">
+						
+						
+						
+						
+						
+                            <li>
+                                
+								
+								<!-----------text at top right home page-------------->
+								
+								
+								
+								
+                                <div class="banner">
+                                    <strong class="title">
+                                        <strong>YouTube</strong><em>4</em><em>Interns</em>
+                                    </strong>
+                                    <p class="p3">View Videos on Internships, Jobs in
+									Ireland, Tip and Interview Techniques. 
+									</p>
+									
+									<p class="p3">
+								
+								
+							
+								
+									</p>
+									
+									
+									
+									
+                                </div>
+                            </li>
+                           
+                        </ul>
+                    </div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+                  
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					</br>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+				
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<div class="padding">
+                            <div class="wrapper">
+                             
+								
+								     <article class="col-4">
+                                    <h4>Select a video from below</h4>
+									</br>
+									
+		<div id="videos2"></div>
+
+
+<!--------YouTube search feed which looks for videos with these related words in the title------------>
+<script 
+    type="text/javascript" 
+    src="http://gdata.youtube.com/feeds/api/videos?q=Internships,Interview Techniques&alt=json-i
+	n-script&callback=showMyVideos2&max-results=35&format=5">
+</script> 
+							
+
+                                    <div class="relative">
+                                    </div>
+                                </article>
+						
+								
+							
+								
+								
+								
+								
+								
+								
+                               
+                            </div>
+                        </div>
+                    </div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+                    
+                    </div>
+                </section>
+                <div class="block"></div>
+            </div>
+        </div>
+    </div>
+	<!--==============================footer=================================-->
+    <footer>
+    	<div class="padding">
+        	<div class="main">
+                <div class="wrapper">
+                	<div class="fleft footer-text">
+                    	<span>Internshipahoy</span> &copy; 2012
+                        <!-- {%FOOTER_LINK} -->
+                    </div>
+					
+						<!---------Social links here--------->
+
+					
+                    <ul class="list-services">
+                    	<li>Link to Us:</li>
+                    	<li><a class="tooltips" title="facebook" href="www.facebook.com"></a></li>
+                        <li class="item-1"><a class="tooltips" title="twitter" href="www.twitter.com"></a></li>
+                        <li class="item-2"><a class="tooltips" title="linkedin" href="www.linkedin.com"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript"> Cufon.now(); </script>
+    <script type="text/javascript">
+		$(window).load(function() {
+			$('.slider')._TMS({
+				duration:1000,
+				easing:'easeOutQuart',
+				preset:'simpleFade',
+				slideshow:10000,
+				banners:'fade',
+				pauseOnHover:true,
+				waitBannerAnimation:false,
+				pagination:'.pags'
+			});
+		});
+    </script>
+</body>
+</html>

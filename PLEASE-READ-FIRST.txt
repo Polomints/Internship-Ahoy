@@ -1,0 +1,27 @@
+Please read the following before launching the Rich Internet Application.
+
+
+1. This prototype application has been developed through the FIREFOX Browser 
+
+   application. It is recommended that this application run through FIREFOX.
+
+
+2. Some of the developed features such as the LinkedIn application will not
+
+   run from the locale machine.
+ 
+
+3. Please open FIREFOX and enter the following URL for the full working version 
+
+   of Internshipahoy.com..................
+
+
+  For a full working version through FIREFOX log onto http://internshipahoy.com/
+
+
+  If opening localy please open the index.html file first as this is the homepage
+  of the application.
+
+   
+  Thank You.
+
